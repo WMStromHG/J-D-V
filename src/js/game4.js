@@ -24,8 +24,9 @@ Room.Game4.ppt = function(){
 
 Room.Game4.ini = function(){
 
+    PG4.ballPlay = 0;
+    Room.Game4.orientation();
     //loop
-    console.log(cav_game4.cc["game4_1"]);
     cav_game4.cc["game4_1"].regX = 464;
     cav_game4.cc["game4_1"].regY = 1104;
     cav_game4.cc["game4_1"].x = 464;
@@ -38,27 +39,142 @@ Room.Game4.ini = function(){
     cvtw.get(cav_game4.img["game4_plant1_3"], {loop:true}).to({rotation:-1.3 }, 1010).to({rotation:0 }, 1050).to({rotation:1.3 }, 1030).to({rotation:0 }, 1070);
     cvtw.get(cav_game4.img["game4_plant1_4"], {loop:true}).to({rotation:-2 }, 1010).to({rotation:0 }, 1050).to({rotation:2 }, 1030).to({rotation:0 }, 1070);
 
+    cvtw.get(cav_game4.img["game4_ci1"], {loop:true}).to({rotation:359 }, 13000);
+    cvtw.get(cav_game4.img["game4_ci2"], {loop:true}).to({rotation:359 }, 5000);
+    cvtw.get(cav_game4.img["game4_ci3"], {loop:true}).to({rotation:359 }, 13000);
+    cvtw.get(cav_game4.img["game4_ci4"], {loop:true}).to({rotation:-359 }, 10000);
+
     //main
-    time_run("game4_z1_1", "game4_z1_2", 100);
-    time_run("game4_z2_1", "game4_z2_2", 30);
-    time_run("game4_z3_1", "game4_z3_2", 70);
-    time_run("game4_z4_1", "game4_z4_2", 200);
-    time_run("game4_z5_1", "game4_z5_2", 10);
-    time_run("game4_z6_1", "game4_z6_2", 130);
-    time_run("game4_z7_1", "game4_z7_2", 60);
+    time_run("game4_clock1", "game4_z1_1", "game4_z1_2", 100);
+    time_run("game4_clock2", "game4_z2_1", "game4_z2_2", 30);
+    time_run("game4_clock3", "game4_z3_1", "game4_z3_2", 70);
+    time_run("game4_clock4", "game4_z4_1", "game4_z4_2", 200);
+    time_run("game4_clock5", "game4_z5_1", "game4_z5_2", 10);
+    time_run("game4_clock6", "game4_z6_1", "game4_z6_2", 130);
+    time_run("game4_clock7", "game4_z7_1", "game4_z7_2", 60);
 
-    function time_run(dom1, dom2, time){
+    function time_run(clock, dom1, dom2, time){
         setInterval(function(){
-            if(cav_game4.img[dom2].rotation == 360){
+            if(PG4[clock]) return;
 
-                if(cav_game4.img[dom1].rotation == 360) cav_game4.img[dom1].rotation = 0;
+            if(cav_game4.img[dom2].rotation >= 360) cav_game4.img[dom2].rotation = 0;
+            if(cav_game4.img[dom1].rotation >= 360) cav_game4.img[dom1].rotation = 0;
 
-                cvtw.get(cav_game4.img[dom1]).to({rotation:cav_game4.img[dom1].rotation+6 }, time*30);
-                cav_game4.img[dom2].rotation = 0;
-            }
             cav_game4.img[dom2].rotation+= 6;
+            cav_game4.img[dom1].rotation+= 0.5;
+
         }, time);
+
+        cav_game4.img[clock].on("click", function () {
+            if(PG4.ballMove) return;
+
+            PG4[clock] = 1;
+
+            if(cav_game4.img[dom2].rotation>=360-(6*2) || cav_game4.img[dom2].rotation<=6*2){
+
+                if(cav_game4.img[dom1].rotation>=360-6  || cav_game4.img[dom1].rotation<=6 ){
+                    if(PG4.ballPlay12) return;
+                    PG4.ballPlay12 = 1;
+                    ball(12);
+                }
+
+                if(cav_game4.img[dom1].rotation>=30-6  && cav_game4.img[dom1].rotation<=30+6 ){
+                    if(PG4.ballPlay1) return;
+                    PG4.ballPlay1 = 1;
+                    ball(1);
+                }
+                if(cav_game4.img[dom1].rotation>=(30*2)-6  && cav_game4.img[dom1].rotation<=(30*2)+6 ){
+                    if(PG4.ballPlay2) return;
+                    PG4.ballPlay2 = 1;
+                    ball(2);
+                }
+                if(cav_game4.img[dom1].rotation>=(30*7)-6  && cav_game4.img[dom1].rotation<=(30*7)+6 ){
+                    if(PG4.ballPlay7) return;
+                    PG4.ballPlay7 = 1;
+                    ball(7);
+                }
+
+            }
+
+            setTimeout(function(){
+                PG4[clock] = 0
+            }, 3000);
+        });
     }
 
+    function ball(x){
+        var nx = Dom.OriX;
+        var ny = Dom.OriY;
+
+        PG4.ballGo = x;
+
+        cvtw.get(cav_game4.img["game4_ball"+PG4.ballGo]).to({alpha:0, x:342, y:555 }, 0).to({alpha:1, x:700*(nx+30)/60, y:1140*(ny-10)/50 }, 500).call(function(){
+            PG4.ballMove = 1;
+        });
+    }
 
 };
+
+Room.Game4.orientation = function(){
+    window.addEventListener("deviceorientation", handleOrientation, true);
+};
+
+function handleOrientation(event) {
+
+    var x = event.gamma;  // In degree in the range [-180,180]
+    var y = event.beta; // In degree in the range [-90,90]
+    Dom.OriX = x;
+    Dom.OriY = y;
+
+    if(!PG4.ballMove || !PG4.ballGo) return;
+
+    if(y>10 && y<60 && x>-30 && x<30){
+
+        cav_game4.img["game4_ball"+PG4.ballGo].x = 700*(x+30)/60;
+        cav_game4.img["game4_ball"+PG4.ballGo].y = 1140*(y-10)/50;
+
+        var xGo = 0;
+        var yGo = 0;
+
+        if(PG4.ballGo==12){
+            xGo = 362;
+            yGo = 435;
+        }
+        if(PG4.ballGo==1){
+            xGo = 303;
+            yGo = 664;
+        }
+        if(PG4.ballGo==2){
+            xGo = 303;
+            yGo = 435;
+        }
+        if(PG4.ballGo==7){
+            xGo = 362;
+            yGo = 664;
+        }
+
+        if(xGo && yGo
+            && cav_game4.img["game4_ball"+PG4.ballGo].x>=xGo-5 && cav_game4.img["game4_ball"+PG4.ballGo].x<=xGo+5
+            && cav_game4.img["game4_ball"+PG4.ballGo].y>=yGo-5 && cav_game4.img["game4_ball"+PG4.ballGo].y<=yGo+5){
+            PG4.ballMove = 0;
+            cvtw.get(cav_game4.img["game4_ball"+PG4.ballGo]).to({alpha:0.8,  x:xGo, y:yGo }, 300).call(function(){
+                PG4.ballPlay++;
+                if(PG4.ballPlay==4) GameFinish();
+            });
+
+        }
+
+    }
+
+}
+
+function GameFinish(){
+    cav_game4.img["game4_ball12"].alpha = 0;
+    cav_game4.img["game4_ball1"].alpha = 0;
+    cav_game4.img["game4_ball2"].alpha = 0;
+    cav_game4.img["game4_ball7"].alpha = 0;
+    cav_game4.sprite["game4_box_open"].alpha = 1;
+    cav_game4.sprite["game4_box_open"].gotoAndPlay("run");
+
+    $("#Game4 ._next").css("opacity",0).show().velocity({ opacity: 1}, {delay:3000, duration: 1000 });
+}

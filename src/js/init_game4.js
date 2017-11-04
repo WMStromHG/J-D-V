@@ -47,6 +47,7 @@ function GameLoad4(){
     Loads.loads("game4_ci2",  "img/game4/", "ci2.png");
     Loads.loads("game4_ci3",  "img/game4/", "ci3.png");
     Loads.loads("game4_ci4",  "img/game4/", "ci4.png");
+    Loads.loads("game4_ball",  "img/game4/", "ball.png");
 
     Loads.loads("x4",  "img/", "x.png");
 
@@ -78,12 +79,13 @@ function GameLoad4_cav(){
 
     cav_game4.drawPhotos("game4_box_open","","game4_box_open_",15,{
         frames:[0,0,700,1140],
-        framerate:8,
+        framerate:6,
         mov: {
             ini:[0],
             run:[0,14,"stop"],
             stop:[14]
-        }
+        },
+        conf:{alpha:0}
     });
 
     cav_game4.drawSprite("game4_butterfly1","",{
@@ -106,6 +108,15 @@ function GameLoad4_cav(){
         },
         conf:{ x:565, y:530, rotation:-40, scaleX:0.8, scaleY:0.8}
     },[Loads.loaded["game4_butterfly"]], "game4_butterfly");
+
+    cav_game4.drawImg("game4_ci1","",{x:287+74  , y:193+75 , regX:74, regY:75});
+    cav_game4.drawImg("game4_ci2","",{x:158+42  , y:390+42 , regX:42, regY:42});
+    cav_game4.drawImg("game4_ci3","",{x:405+57 , y:820+57 , regX:57, regY:57});
+    cav_game4.drawImg("game4_ci4","",{x:485+44 , y:768+42 , regX:44, regY:42});
+    cav_game4.drawImg("game4_ball12","",{ alpha:0},Loads.loaded["game4_ball"]);
+    cav_game4.drawImg("game4_ball1","",{ alpha:0},Loads.loaded["game4_ball"]);
+    cav_game4.drawImg("game4_ball2","",{ alpha:0},Loads.loaded["game4_ball"]);
+    cav_game4.drawImg("game4_ball7","",{ alpha:0},Loads.loaded["game4_ball"]);
 
     cav_game4.drawImg("game4_plant0");
     cav_game4.drawImg("game4_plant0_1","",{x:405, y:797+343, regY:343});
@@ -150,6 +161,11 @@ function GameLoad4_cav(){
     var drawArr = [
         cav_game4.img["game4_bg"],
 
+        cav_game4.img["game4_ci1"],
+        cav_game4.img["game4_ci2"],
+        cav_game4.img["game4_ci3"],
+        cav_game4.img["game4_ci4"],
+
         cav_game4.img["game4_clock1"],
         cav_game4.img["game4_z1_2"],
         cav_game4.img["game4_z1_1"],
@@ -179,9 +195,8 @@ function GameLoad4_cav(){
         cav_game4.img["game4_z6_2"],
         cav_game4.img["game4_z6_1"],
 
-
-        cav_game4.sprite["game4_box_open"],
         cav_game4.img["game4_box"],
+        cav_game4.sprite["game4_box_open"],
 
         cav_game4.img["game4_plant0"],
 
@@ -220,6 +235,10 @@ function GameLoad4_cav(){
 
     cav_game4.ccv("game4_2");
     drawArr = [
+        cav_game4.img["game4_ball12"],
+        cav_game4.img["game4_ball1"],
+        cav_game4.img["game4_ball2"],
+        cav_game4.img["game4_ball7"],
         cav_game4.img["game4_border1"],
         cav_game4.img["game4_border2"],
         cav_game4.img["game4_border3"],
