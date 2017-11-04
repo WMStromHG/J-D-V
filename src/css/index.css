@@ -1,0 +1,63 @@
+﻿@charset "utf-8";
+/*Index*/
+#Index{
+    background-color: #000000;
+}
+#Index .rules{
+    position: absolute;
+    top: 240px;
+    left: 70px;
+    width: 146px;
+    height: 201px;
+    z-index: 100;
+}
+#Index .pic{
+    position: absolute; left: 67px; top: 150px;
+    width: 548px; height: 814px;
+    background: url(../../img/index/pic.png);
+    z-index: 1;
+}
+#Index .start{
+    position: absolute; left: 260px; top: 536px;
+    width: 179px; height: 148px;
+    z-index: 10000;
+}
+#Index .top{
+    position: absolute;
+    top: 47px;
+    left:157px;
+    background: url("../../img/index/face1_r3.png");
+    width:329px;
+    height: 128px;
+}
+#Index .topWheel{
+    position: absolute;
+    top: 67px;
+    left:215px;
+    background: url("../../img/index/face2_r1.png");
+    width:256px;
+    height: 256px;
+}
+#Index .bottom{
+    position: absolute;
+    top: 957px;
+    left:191px;
+    background: url("../../img/index/face1_r4.png");
+    width:302px;
+    height: 145px;
+}
+#Index .bottomWheel{
+    position: absolute;
+    top: 851px;
+    left:244px;
+    background: url("../../img/index/face2_r2.png");
+    width:198px;
+    height: 198px;
+}
+
+
+#Read .bg{
+    background: url("../../img/index/rules.png");
+    width: 100%;
+    height: 100%;
+}

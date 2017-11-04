@@ -1,0 +1,39 @@
+﻿@charset "utf-8";
+/*GameLoad4*/
+#GameLoad4 .tit2{
+    position: absolute; left: 343px; top: 236px;
+    width: 26px; height: 87px;
+    background: url("../../img/load4/tit2.png");
+}
+#GameLoad4 .tit1{
+    position: absolute; left: 315px; top: 358px;
+    width: 74px; height: 161px;
+    background: url("../../img/load4/tit1.png");
+}
+#GameLoad4 .box{
+    position: absolute; left: 261px; top: 557px;
+    width: 177px; height: 33px;
+    background: url(../../img/loadbox.png);
+}
+#GameLoad4 .dot{
+    position: absolute; left: 324px; top: 726px;
+    width: 76px; height: 94px;
+    background: url("../../img/load4/dot.png");
+}
+#GameLoad4 .tit3{
+    position: absolute; left: 326px; top: 961px;
+    width: 51px; height: 34px;
+    background: url("../../img/load4/tit3.png");
+}
+#GameLoad4 .line{
+    position: absolute; left: 274px; top: 563px;
+    width: 1px; height: 23px;
+    background-color: #D4B67A;
+}
+#GameLoad4 .loadw{
+    position: absolute; left: 261px; top: 605px;
+    width: 177px; height: 28px;
+    text-align: center; font-size: 18px;
+    color: #D4B67A;
+}
+
