@@ -27,6 +27,7 @@ Room.Game4.ini = function(){
     PG4.ballPlay = 0;
     Room.Game4.orientation();
     //loop
+    mp3_play("game4_time",1);
     cav_game4.cc["game4_1"].regX = 464;
     cav_game4.cc["game4_1"].regY = 1104;
     cav_game4.cc["game4_1"].x = 464;
@@ -174,6 +175,7 @@ function GameFinish(){
     cav_game4.img["game4_ball2"].alpha = 0;
     cav_game4.img["game4_ball7"].alpha = 0;
     cav_game4.sprite["game4_box_open"].alpha = 1;
+    mp3_play("game4_open");
     cav_game4.sprite["game4_box_open"].gotoAndPlay("run");
 
     $("#Game4 ._next").css("opacity",0).show().velocity({ opacity: 1}, {delay:3000, duration: 1000 });

@@ -49,6 +49,9 @@ function GameLoad4(){
     Loads.loads("game4_ci4",  "img/game4/", "ci4.png");
     Loads.loads("game4_ball",  "img/game4/", "ball.png");
 
+    Loads.loads("mp3_game4_open",  "mp3/game4/", "open.wav");
+    Loads.loads("mp3_game4_time",  "mp3/game4/", "time.wav");
+
     Loads.loads("x4",  "img/", "x.png");
 
     Loads.progress = function(e){
