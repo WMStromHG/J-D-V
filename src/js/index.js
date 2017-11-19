@@ -39,12 +39,12 @@ Room.Index.go_after = function () {
 };
 
 Room.Index.ppt = function(){
-    var start = "GameLoad4";
+    var start = "GameLoad1";
     cc.ppt(["Index", start] , function(after , callback){
         cc.m["Index"].velocity({ opacity: 0}, { duration: 1000, display: "none" });
         cc.m[start].css({"opacity": 0}).show().velocity({ opacity: 1}, { duration: 1000, complete:function(){
             after.go();
-            GameLoad4();
+            GameLoad1();
         }});
     })
 };
