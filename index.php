@@ -186,7 +186,7 @@
 <script src="./wx/jweixin-1.0.0.js"></script>
 <?php
 require_once "wx/jssdk.php";
-$jssdk = new JSSDK("wx2b5e5b328d9c762c", "0a28b1c3e79cb65a0bdeda110b7d4cbe");
+$jssdk = new JSSDK("wx2b5e5b328d9c762c", "");
 $signPackage = $jssdk->GetSignPackage();
 ?>
 
