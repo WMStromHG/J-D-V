@@ -1,0 +1,77 @@
+﻿@charset "utf-8";
+/*Index*/
+#Index{
+    background-color: #000000;
+    display: block;
+}
+
+#Index .main{
+    background: url("../../img/ticket/ticket_bg.jpg") no-repeat;
+}
+
+#Index .nick{
+    position: absolute; top: 368px; left: 217px;
+    width: 270px; height: 60px; line-height: 60px;
+    text-align: center;
+    color: #fff; font-size: 35px;
+}
+
+#Index .word{
+    position: absolute; top: 433px; left: 180px;
+    width: 342px; height: 32px; line-height: 32px;
+    text-align: center;
+    font-size: 17px;
+}
+
+#Index .time{
+    position: absolute; top: 483px; left: 204px;
+    width: 296px; height: 59px; line-height: 59px;
+    text-align: center;
+    font-size: 35px;
+}
+
+#Index .tt{
+    position: absolute; top: 486px;
+    width: 55px; height: 55px; line-height: 55px;
+    text-align: center; font-size: 35px;
+}
+
+#Index .getTicket{
+    position: absolute; top: 621px; left: 217px;
+    width: 269px; height: 58px;
+}
+#Index .play{
+    position: absolute; top: 1046px; left: 67px;
+    width: 200px; height: 52px;
+}
+#Index .share{
+    position: absolute; top: 1046px; left: 429px;
+    width: 200px; height: 52px;
+}
+
+#Index .t1{ left: 209px;}
+#Index .t2{ left: 266px;}
+#Index .tx{ top: 483px; left: 323px;}
+#Index .t3{ left: 381px;}
+#Index .t4{ left: 438px;}
+
+
+#Index .ticket{
+    position: absolute;top: 0px; left: 0px;
+    width: 100%; height: 100%;
+    background-color:rgba(0,0,0,0.7); display: none;
+}
+
+#Index .ticket .img{
+    position: absolute;top: 277px; left: 148px;
+    width: 405px; height: 550px;
+    background: url(../../img/ticket/t.png);
+}
+
+#Index .ticket_get_err{
+    display: none;
+}
+
+#Index .ticket_json{
+    display: none;
+}

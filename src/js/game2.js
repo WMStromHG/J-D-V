@@ -197,3 +197,11 @@ Room.Game2.ini = function(){
     });
 
 };
+Room.Game2.come_before = function(next){
+    Dom.game.game2_start = new Date();
+    next();
+};
+Room.Game2.go_before = function(next){
+    Dom.game.game2_end = new Date();
+    next();
+};

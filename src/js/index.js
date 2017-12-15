@@ -10,6 +10,7 @@ Room.Loader.ppt = function(){
 
 Room.Index = {};
 Room.Index.dom = function(){
+    Dom.game = {};
     $("#Index .start").tap(function(e){
         cc.tap(e);
         mp3_play("bg", 1);

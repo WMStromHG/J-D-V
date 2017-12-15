@@ -22,6 +22,15 @@ Room.Game1.ppt = function(){
         }});
     })
 };
+Room.Game1.come_before = function(next){
+    Dom.game.game1_start = new Date();
+    next();
+};
+Room.Game1.go_before = function(next){
+    Dom.game.game1_end = new Date();
+    // alert(Dom.game.game1_end - Dom.game.game1_start);
+    next();
+};
 Room.Game1.go_after = function(){
     clearInterval(Hand.game1_yun1);
     clearInterval(Hand.game1_yun2);
