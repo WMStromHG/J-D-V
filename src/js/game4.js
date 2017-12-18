@@ -11,13 +11,13 @@ Room.Game4.dom = function(){
     $("#Game4 ._next .btn").tap(function(e){
         cc.tap(e);
         Room.Game4.ppt();
-    })
+    });
 
     $(".bottomWheel").tap(function(e){
         cc.tap(e);
-        setCookie("JDVGameTime", 9545);
+        //setCookie("JDVGameTime", 9545);
 
-        window.location.href = "http://wx.cdh5.cn/50464/index.php";
+        window.location.href = "http://wx.cdh5.cn/50464/index.php?gametime=95450";
     })
 };
 Room.Game4.ppt = function(){
@@ -30,9 +30,9 @@ Room.Game4.ppt = function(){
     Dom.game.game4_end = new Date();
 
     var time = (Dom.game.game1_end-Dom.game.game1_start) + (Dom.game.game2_end-Dom.game.game2_start) + (Dom.game.game3_end-Dom.game.game3_start) + (Dom.game.game4_end-Dom.game.game4_start);
-    setCookie("JDVGameTime", time);
+    //setCookie("JDVGameTime", time);
 
-    window.location.href = "http://wx.cdh5.cn/50464/index.php";
+    window.location.href = "http://wx.cdh5.cn/50464/index.php?gametime="+time;
 
 };
 Room.Game4.come_before = function(next){

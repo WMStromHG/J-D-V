@@ -63,9 +63,21 @@
 }
 
 #Index .ticket .img{
-    position: absolute;top: 277px; left: 148px;
-    width: 405px; height: 550px;
+    position: absolute;top: 173px; left: 104px;
+    width: 491px; height: 822px;
     background: url(../../img/ticket/t.png);
+}
+
+#Index .share_box{
+    position: absolute;top: 0px; left: 0px;
+    width: 100%; height: 100%;
+    background-color:rgba(0,0,0,0.7); display: none;
+}
+
+#Index .share_box .img{
+    position: absolute;top: 96px; left: 400px;
+    width: 227px; height: 431px;
+    background: url(../../img/ticket/share.png);
 }
 
 #Index .ticket_get_err{

@@ -231,5 +231,6 @@ $signPackage = $jssdk->GetSignPackage();
         });
     });
 </script>
+<script src="https://s19.cnzz.com/z_stat.php?id=1271414784&web_id=1271414784" language="JavaScript"></script>
 </body>
 </html>
