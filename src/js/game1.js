@@ -44,6 +44,8 @@ Room.Game1.ini = function(){
         mp3_play("game1_book");
         cav_game1.sprite["game1_book2"].gotoAndPlay("run");
         PG1.glass = 1;
+
+        PG1.ufo = 0;
     });
 
     cav_game1.dom["game1_book3"].on("click", function () {
@@ -53,7 +55,7 @@ Room.Game1.ini = function(){
     });
 
     cav_game1.dom["game1_glass1"].on("click", function () {
-        if(PG1.ufo && PG1.ufo_play) {
+        if(PG1.ufo_play) {
             if(PG1.glass){
                 mp3_play("game1_glass");
                 cav_game1.sprite["game1_glass2"].gotoAndPlay("run");
@@ -70,10 +72,12 @@ Room.Game1.ini = function(){
             mp3_play("game1_glass");
             cav_game1.sprite["game1_glass1"].gotoAndPlay("run");
         }
+
+        PG1.ufo = 0;
     });
     cav_game1.dom["game1_ufo"].on("click", function () {
-        PG1.ufo_play = 1;
         if(PG1.ufo) {
+            PG1.ufo_play = 1;
             mp3_play("game1_ufo");
             mp3_play("game1_ufo_light");
             cav_game1.sprite["game1_ufo"].gotoAndPlay("play");
@@ -90,42 +94,58 @@ Room.Game1.ini = function(){
     cav_game1.dom["game1_brain"].on("click", function () {
         mp3_play("game1_brain");
         cav_game1.sprite["game1_brain"].gotoAndPlay("run");
+
+        PG1.ufo = 0;
     });
 
     cav_game1.dom["game1_book1"].on("click", function () {
         mp3_play("game1_book");
         cav_game1.sprite["game1_book1"].gotoAndPlay("run");
+
+        PG1.ufo = 0;
     });
 
     cav_game1.dom["game1_draw"].on("click", function () {
         mp3_play("game1_draw");
         cav_game1.sprite["game1_draw"].gotoAndPlay("run");
+
+        PG1.ufo = 0;
     });
 
     cav_game1.dom["game1_bookshow"].on("click", function () {
         mp3_play("game1_bookshow");
         cav_game1.sprite["game1_bookshow"].gotoAndPlay("run");
+
+        PG1.ufo = 0;
     });
 
     cav_game1.dom["game1_rocket"].on("click", function () {
         cav_game1.sprite["game1_rocket"].gotoAndPlay("run");
         cvtw.removeTweens(cav_game1.sprite["game1_rocket"]);
         cvtw.get(cav_game1.sprite["game1_rocket"]).wait(1200).to({alpha:0 }, 500).to({alpha:1 }, 700);
+
+        PG1.ufo = 0;
     });
 
     cav_game1.dom["game1_sewing"].on("click", function () {
         mp3_play("game1_sewing");
         cav_game1.sprite["game1_sewing"].gotoAndPlay("run");
+
+        PG1.ufo = 0;
     });
 
     cav_game1.dom["game1_drawer"].on("click", function () {
         mp3_play("game1_drawer");
         cav_game1.sprite["game1_drawer"].gotoAndPlay("run");
+
+        PG1.ufo = 0;
     });
 
     cav_game1.dom["game1_flower"].on("click", function () {
         mp3_play("game1_flower");
         cav_game1.sprite["game1_flower"].gotoAndPlay("run");
+
+        PG1.ufo = 0;
     });
 
     //mov

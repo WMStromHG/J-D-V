@@ -1,4 +1,46 @@
 ﻿@charset "utf-8";
+
+/*Loader*/
+#Loader{
+    background-color: #000000;
+}
+#Loader img{
+    position: absolute;
+    top: 232px;
+    left: 307px;
+    width: 85px;
+    height: 659px;
+}
+#Loader .word{
+    position: absolute;
+    top: 590px;
+    left: 323px;
+    width: 55px;
+    height: 29px;
+    line-height: 29px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+#Loader .line{
+    position: absolute;
+    top: 388px;
+    left: 343px;
+    width: 15px;
+    height: 155px;
+    overflow: hidden;
+}
+#Loader .lineX{
+    position: absolute;
+    top: 155px;
+    left: 0px;
+    width: 15px;
+    height: 155px;
+    background-color: #fff;
+}
+
+
+
 /*Index*/
 #Index{
     background-color: #000000;
@@ -14,7 +56,7 @@
 #Index .pic{
     position: absolute; left: 67px; top: 150px;
     width: 548px; height: 814px;
-    background: url(../../img/index/pic.png);
+    /*background: url(../../img/index/pic.png);*/
     z-index: 1;
 }
 #Index .start{
@@ -26,7 +68,7 @@
     position: absolute;
     top: 47px;
     left:157px;
-    background: url("../../img/index/face1_r3.png");
+    /*background: url("../../img/index/face1_r3.png");*/
     width:329px;
     height: 128px;
 }
@@ -34,7 +76,7 @@
     position: absolute;
     top: 67px;
     left:215px;
-    background: url("../../img/index/face2_r1.png");
+    /*background: url("../../img/index/face2_r1.png");*/
     width:256px;
     height: 256px;
 }
@@ -42,7 +84,7 @@
     position: absolute;
     top: 957px;
     left:191px;
-    background: url("../../img/index/face1_r4.png");
+    /*background: url("../../img/index/face1_r4.png");*/
     width:302px;
     height: 145px;
 }
@@ -50,14 +92,14 @@
     position: absolute;
     top: 851px;
     left:244px;
-    background: url("../../img/index/face2_r2.png");
+    /*background: url("../../img/index/face2_r2.png");*/
     width:198px;
     height: 198px;
 }
 
 
 #Read .bg{
-    background: url("../../img/index/rules.png");
+    /*background: url("../../img/index/rules.png");*/
     width: 100%;
     height: 100%;
 }

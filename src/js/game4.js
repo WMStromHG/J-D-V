@@ -13,12 +13,12 @@ Room.Game4.dom = function(){
         Room.Game4.ppt();
     });
 
-    $(".bottomWheel").tap(function(e){
-        cc.tap(e);
-        //setCookie("JDVGameTime", 9545);
-
-        window.location.href = "http://wx.cdh5.cn/50464/index.php?gametime=95450";
-    })
+    // $(".bottomWheel").tap(function(e){
+    //     cc.tap(e);
+    //     //setCookie("JDVGameTime", 9545);
+    //
+    //     window.location.href = "http://wx.cdh5.cn/50464/index.php?gametime=95450";
+    // })
 };
 Room.Game4.ppt = function(){
     // cc.ppt(["Game3", "GameLoad4"] , function(after , callback){

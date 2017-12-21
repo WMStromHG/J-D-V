@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type">
     <meta content="text/html; charset=utf-8">
     <meta charset="utf-8">
-    <title>JDV 与众不同的理念</title>
+    <title>J.D.V 以梦为马 · 诗酒趁年华</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -38,7 +38,13 @@
 <div id="app">
 
     <section class="cc " id="Loader">
-        <div class="main"></div>
+        <div class="main">
+            <div class="word"></div>
+            <div class="line">
+                <div class="lineX"></div>
+            </div>
+            <img src="img/loader.png" alt="">
+        </div>
     </section>
 
     <section class="cc " id="Index">
@@ -216,8 +222,8 @@ $signPackage = $jssdk->GetSignPackage();
         loader();
 
         wx.onMenuShareAppMessage({
-            title: 'JDV 与众不同的理念', // 分享标题
-            desc: '以梦为马，诗酒趁年华', // 分享描述
+            title: '这个游戏让所有人玩到怀疑智商', // 分享标题
+            desc: '以梦为马 · 诗酒趁年华', // 分享描述
             link: 'http://mk1.jdv.cc/index.php', // 分享链接
             imgUrl: 'http://mk1.jdv.cc/wx/logo.jpg', // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
@@ -225,7 +231,7 @@ $signPackage = $jssdk->GetSignPackage();
         });
 
         wx.onMenuShareTimeline({
-            title: '以梦为马，诗酒趁年华', // 分享标题
+            title: '这个游戏让所有人玩到怀疑智商', // 分享标题
             link:'http://mk1.jdv.cc/index.php',
             imgUrl: 'http://mk1.jdv.cc/wx/logo.jpg' // 分享图标
         });
