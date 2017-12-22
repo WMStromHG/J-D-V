@@ -222,18 +222,18 @@ $signPackage = $jssdk->GetSignPackage();
         loader();
 
         wx.onMenuShareAppMessage({
-            title: '这个游戏让所有人玩到怀疑智商', // 分享标题
-            desc: '以梦为马 · 诗酒趁年华', // 分享描述
+            title: '听说你脑洞巨大，拇指飞快？来这挑战一下', // 分享标题
+            desc: 'J.D.V 以梦为马 · 诗酒趁年华', // 分享描述
             link: 'http://mk1.jdv.cc/index.php', // 分享链接
-            imgUrl: 'http://mk1.jdv.cc/wx/logo.jpg', // 分享图标
+            imgUrl: 'http://mk1.jdv.cc/wx/logo.png', // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '' // 如果type是music或video，则要提供数据链接，默认为空
         });
 
         wx.onMenuShareTimeline({
-            title: '这个游戏让所有人玩到怀疑智商', // 分享标题
+            title: '听说你脑洞巨大，拇指飞快？来这挑战一下', // 分享标题
             link:'http://mk1.jdv.cc/index.php',
-            imgUrl: 'http://mk1.jdv.cc/wx/logo.jpg' // 分享图标
+            imgUrl: 'http://mk1.jdv.cc/wx/logo.png' // 分享图标
         });
     });
 </script>

@@ -12,20 +12,26 @@ $t3 = substr($times, 3, 1);
 $t4 = substr($times, 4, 1);
 
 
-if($timet<=20 && $timet>0){
-    $x = rand(-1, 4);
+if($timet<=60 && $timet>0){
+    $x = rand(0, 4);
     $score = 95 + $x;
-}elseif($timet>20 && $timet<=60){
-    $x = rand(-15, 15);
-    $score = 75 + $x;
 }elseif($timet>60 && $timet<=120){
-    $x = rand(-15, 15);
-    $score = 55 + $x;
+    $x = rand(0, 10);
+    $score = 85 + $x;
 }elseif($timet>120 && $timet<=180){
-    $x = rand(-15, 15);
+    $x = rand(0, 10);
+    $score = 75 + $x;
+}elseif($timet>180 && $timet<=240){
+    $x = rand(0, 10);
+    $score = 65 + $x;
+}elseif($timet>240 && $timet<=300){
+    $x = rand(0, 10);
+    $score = 55 + $x;
+}elseif($timet>300 && $timet<=360){
+    $x = rand(0, 10);
     $score = 45 + $x;
 }else{
-    $x = rand(-15, 15);
+    $x = rand(-10, 10);
     $score = 35 + $x;
 }
 
@@ -316,18 +322,18 @@ $signPackage = $jssdk->GetSignPackage();
         Dom.ad_bad = 1;
 
         wx.onMenuShareAppMessage({
-            title: '这个游戏让所有人玩到怀疑智商', // 分享标题
-            desc: '以梦为马 · 诗酒趁年华', // 分享描述
+            title: '听说你脑洞巨大，拇指飞快？来这挑战一下', // 分享标题
+            desc: 'J.D.V 以梦为马 · 诗酒趁年华', // 分享描述
             link: 'http://mk1.jdv.cc/index.php', // 分享链接
-            imgUrl: 'http://mk1.jdv.cc/wx/logo.jpg', // 分享图标
+            imgUrl: 'http://mk1.jdv.cc/wx/logo.png', // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '' // 如果type是music或video，则要提供数据链接，默认为空
         });
 
         wx.onMenuShareTimeline({
-            title: '这个游戏让所有人玩到怀疑智商', // 分享标题
+            title: '听说你脑洞巨大，拇指飞快？来这挑战一下', // 分享标题
             link:'http://mk1.jdv.cc/index.php',
-            imgUrl: 'http://mk1.jdv.cc/wx/logo.jpg' // 分享图标
+            imgUrl: 'http://mk1.jdv.cc/wx/logo.png' // 分享图标
         });
     });
 </script>
