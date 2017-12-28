@@ -13,12 +13,21 @@ Room.Game4.dom = function(){
         Room.Game4.ppt();
     });
 
-    // $(".bottomWheel").tap(function(e){
-    //     cc.tap(e);
-    //     //setCookie("JDVGameTime", 9545);
-    //
-    //     window.location.href = "http://wx.cdh5.cn/50464/index.php?gametime=95450";
-    // })
+    Dom.X_go = 0;
+    $(".topWheel").tap(function(e){
+        cc.tap(e);
+        //setCookie("JDVGameTime", 9545);
+        Dom.X_go++;
+
+    });
+
+    $(".bottomWheel").tap(function(e){
+        cc.tap(e);
+        //setCookie("JDVGameTime", 9545);
+
+        if(Dom.X_go==3)
+            window.location.href = "http://wx.cdh5.cn/50464/index.php?gametime=195450";
+    })
 };
 Room.Game4.ppt = function(){
     // cc.ppt(["Game3", "GameLoad4"] , function(after , callback){

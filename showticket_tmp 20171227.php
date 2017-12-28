@@ -39,18 +39,20 @@ if(!$openid || !$unionid){
     die("Sorry! openid and unionid is error!");
 }
 
-$url = "http://hope.demogic.com/open-api/getMemberInfo.json";
-$data = '&unionid='.$unionid;
-//$data.= '&optType=1';
+$url = "http://hope.demogic.com/open-api/memberQuery.json";
+$data = '&openId='.$openid;
+$data.= '&optType=1';
 $re = api($url, $data);
 
-$member = $re->getMemberInfo_Response;
+$member = $re->memberQuery_response;
 
-if($member->result == 2 || $member->result == 14005){
+//print_r($member);
+
+if($member->result == 2){
     //非会员,注册临时会员
     $re = member_register($openid, $unionid, $nick, $headimgurl, 0);
     $rs = $re->addMemberId_response;
-    if($rs->result==14002 || $rs->result==14004){
+    if($rs->result==14002){
         //注册成功，发券 / 12808 / 1
         $re_tk = get_ticket($unionid, 0);
 
@@ -58,14 +60,11 @@ if($member->result == 2 || $member->result == 14005){
 
         if($re_tk->couponLaunch_response->result==1) $ticket_get_err = 1;
         elseif($re_tk->couponLaunch_response->result==12808) $ticket_get_err = 2;
-        elseif($re_tk->couponLaunch_response->result==2) $ticket_get_err = 3;
         else $ticket_get_err = 0;
 //        print_r($re_tk);
     }else{
         die("Sorry! GIC API is error! The problem is in addMemberId.json : cause = ".$rs->cause);
     }
-
-
 
 }else if($member->result == 1){
     //会员，获取会员等级
@@ -78,14 +77,11 @@ if($member->result == 2 || $member->result == 14005){
 
     if($re_tk->couponLaunch_response->result==1) $ticket_get_err = 1;
     elseif($re_tk->couponLaunch_response->result==12808) $ticket_get_err = 2;
-    elseif($re_tk->couponLaunch_response->result==2) $ticket_get_err = 3;
-    else {
-        $ticket_get_err = 0;
-        //die("Sorry! GIC API is error! The problem is in couponLaunchByUnionid.json : err is ".$ticket_json);
-    }
+    else $ticket_get_err = 0;
+//    print_r($re_tk);
 
 }else{
-    die("Sorry! GIC API is error! The problem is in getMemberInfo.json : cause is ".$member->cause);
+    die("Sorry! GIC API is error! The problem is in memberQuery.json : cause is ".$member->cause);
 }
 
 //发券
@@ -260,12 +256,11 @@ function curl_post($url, $data){
 
         $("#Index .getTicket").tap(function(e){
             cc.tap(e);
-            //$.get("http://mk1.jdv.cc/.php?unionid= //echo $unionid//", function(result){
+            //$.get("http://mk1.jdv.cc/getticket.php?unionid= //echo $unionid//", function(result){
             //    if(!result) alert("优惠券领取失败！");
             //    if(result=="2") alert("OK！");
             //});
             if($("#Index .ticket_get_err").html()=="0") alert("你来晚了！优惠券领取失败！");
-            else if($("#Index .ticket_get_err").html()=="2") alert("优惠券已经在你的会员中心里啦！快进去公众号领取吧！");
             else $("#Index .ticket").fadeIn();
 
         });
@@ -327,7 +322,7 @@ $signPackage = $jssdk->GetSignPackage();
         Dom.ad_bad = 1;
 
         wx.onMenuShareAppMessage({
-            title: '只有1%的高智商才能通关', // 分享标题
+            title: '听说你脑洞巨大，拇指飞快？来这挑战一下', // 分享标题
             desc: 'J.D.V 以梦为马 · 诗酒趁年华', // 分享描述
             link: 'http://mk1.jdv.cc/index.php', // 分享链接
             imgUrl: 'http://mk1.jdv.cc/wx/logo.png', // 分享图标
@@ -336,7 +331,7 @@ $signPackage = $jssdk->GetSignPackage();
         });
 
         wx.onMenuShareTimeline({
-            title: '只有1%的高智商才能通关', // 分享标题
+            title: '听说你脑洞巨大，拇指飞快？来这挑战一下', // 分享标题
             link:'http://mk1.jdv.cc/index.php',
             imgUrl: 'http://mk1.jdv.cc/wx/logo.png' // 分享图标
         });
