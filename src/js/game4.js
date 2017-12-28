@@ -116,7 +116,7 @@ Room.Game4.ini = function(){
                     PG4.ballPlay2 = 1;
                     ball(2);
                 }
-                if(cav_game4.img[dom1].rotation>=(30*7)-6  && cav_game4.img[dom1].rotation<=(30*7)+6 ){
+                if(cav_game4.img[dom1].rotation>=(30*8)-6  && cav_game4.img[dom1].rotation<=(30*8)+6 ){
                     if(PG4.ballPlay7) return;
                     PG4.ballPlay7 = 1;
                     ball(7);
