@@ -22,9 +22,9 @@
 
 #Index .word{
     position: absolute; top: 433px; left: 180px;
-    width: 342px; height: 32px; line-height: 32px;
+    width: 355px; height: 32px; line-height: 32px;
     text-align: center;
-    font-size: 17px;
+    font-size: 19px;
 }
 
 #Index .time{
@@ -35,13 +35,13 @@
 }
 
 #Index .tt{
-    position: absolute; top: 486px;
+    position: absolute; top: 625px;
     width: 55px; height: 55px; line-height: 55px;
     text-align: center; font-size: 35px;
 }
 
 #Index .getTicket{
-    position: absolute; top: 621px; left: 217px;
+    position: absolute; top: 726px; left: 217px;
     width: 269px; height: 58px;
 }
 #Index .play{
@@ -55,7 +55,7 @@
 
 #Index .t1{ left: 209px;}
 #Index .t2{ left: 266px;}
-#Index .tx{ top: 483px; left: 323px;}
+#Index .tx{ top: 622px; left: 323px;}
 #Index .t3{ left: 381px;}
 #Index .t4{ left: 438px;}
 
@@ -90,4 +90,29 @@
 
 #Index .ticket_json{
     display: none;
+}
+
+#Index .w1{
+    position: absolute; top: 505px; left: 102px;
+    width: 501px; height: 54px;
+}
+
+#Index .w2{
+    position: absolute; top: 502px; left: 72px;
+    width: 554px; height: 58px;
+}
+
+#Index .wc1{
+    position: absolute; top: 486px; left: 194px;
+    width: 314px; height: 103px;
+}
+
+#Index .wc2{
+    position: absolute; top: 485px; left: 135px;
+    width: 426px; height: 103px;
+}
+
+#Index .w3{
+    position: absolute; top: 504px; left: 102px;
+    width: 501px; height: 56px;
 }

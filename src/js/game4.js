@@ -26,7 +26,7 @@ Room.Game4.dom = function(){
         //setCookie("JDVGameTime", 9545);
 
         if(Dom.X_go==3)
-            window.location.href = "http://wx.cdh5.cn/50464/index.php?gametime=195450";
+            window.location.href = "http://wx.cdh5.cn/50464/index.php?gametime="+(60*10*1000+1000);
     })
 };
 Room.Game4.ppt = function(){

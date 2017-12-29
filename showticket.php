@@ -11,6 +11,24 @@ $t2 = substr($times, 1, 1);
 $t3 = substr($times, 3, 1);
 $t4 = substr($times, 4, 1);
 
+$w1 = "none";
+$w2 = "none";
+$wc1 = "none";
+$wc2 = "none";
+$w3 = "none";
+
+if($timet<=60*3 && $timet>0){
+    $w1 = "block";
+}elseif($timet>60*3 && $timet<=60*5){
+    $w2 = "block";
+}elseif($timet>60*5 && $timet<=60*7){
+    $wc1 = "block";
+}elseif($timet>60*7 && $timet<=60*9){
+    $wc2 = "block";
+}else{
+    $w3 = "block";
+}
+
 
 if($timet<=60 && $timet>0){
     $x = rand(0, 4);
@@ -34,6 +52,8 @@ if($timet<=60 && $timet>0){
     $x = rand(-10, 10);
     $score = 35 + $x;
 }
+
+
 
 if(!$openid || !$unionid){
     die("Sorry! openid and unionid is error!");
@@ -211,6 +231,12 @@ function curl_post($url, $data){
             <div class="tt tx">:</div>
             <div class="tt t3"><?php echo $t3?></div>
             <div class="tt t4"><?php echo $t4?></div>
+
+            <div class="w1" style="display: <?php echo $w3?>" ><img src="img/ticket/w1.png" alt=""></div>
+            <div class="w2" style="display: <?php echo $w2?>"><img src="img/ticket/w2.png" alt=""></div>
+            <div class="w3" style="display: <?php echo $w1?>"><img src="img/ticket/w3.png" alt=""></div>
+            <div class="wc1" style="display: <?php echo $wc1?>"><img src="img/ticket/wc1.png" alt=""></div>
+            <div class="wc2" style="display: <?php echo $wc2?>"><img src="img/ticket/wc2.png" alt=""></div>
 
             <div class="getTicket"></div>
             <div class="play"></div>
