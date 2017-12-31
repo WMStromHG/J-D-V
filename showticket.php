@@ -290,8 +290,8 @@ function curl_post($url, $data){
             //    if(!result) alert("优惠券领取失败！");
             //    if(result=="2") alert("OK！");
             //});
-            if($("#Index .ticket_get_err").html()=="0") alert("你来晚了！优惠券领取失败！");
-            else if($("#Index .ticket_get_err").html()=="2") alert("优惠券已经在你的会员中心里啦！快进去公众号领取吧！");
+            if($("#Index .ticket_get_err").html()=="0") alert("你来晚了！优惠券都领完了！");
+            else if($("#Index .ticket_get_err").html()=="2") alert("优惠卡券已在微信公众号“JDVclub”的会员中心等你领取，快去领券吧！");
             else $("#Index .ticket").fadeIn();
 
         });
