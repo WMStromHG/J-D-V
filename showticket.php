@@ -113,7 +113,7 @@ function get_ticket($unionid='', $p=0){
     if(!$unionid) {
         die("Sorry! Paras is error! unionid is  empty");
     }
-    $couponNum = "ff80808160463b600160487974bc0197";
+    $couponNum = "ff808081614b41ea016154cc6d3d325e";
     $url = "http://hope.demogic.com/open-api/couponLaunchByUnionid.json";
     $data = '&unionid='.$unionid;
     $data.= '&couponNum='.$couponNum;
